@@ -1,0 +1,16 @@
+.navbar .navbar-brand {
+  margin-right: 60px !important;
+  /* padding-top: 0 !important; */
+  font-size: 32px !important;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.navbar .nav-link {
+  padding-right: 40px !important;
+}
+
+.navbar .search-form {
+  display: flex;
+  align-items: center;
+}

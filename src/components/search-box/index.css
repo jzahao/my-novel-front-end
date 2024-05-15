@@ -1,0 +1,38 @@
+.search-box-container {
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  background-color: #f4f4f4;
+}
+
+.search-box-content {
+  max-width: 470px;
+  width: 100%;
+  position: relative;
+}
+
+.search-box-content input {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #545454;
+  line-height: normal;
+  border: 1px solid #f8f8f8;
+  border-radius: 4px;
+  outline: none;
+}
+
+.search-box-content input:focus {
+  border-color: #ccc;
+}
+
+.search-box-content button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding: 0 12px;
+  color: #545454;
+  background-color: transparent;
+  border: none;
+}

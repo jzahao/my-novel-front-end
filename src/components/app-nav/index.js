@@ -28,6 +28,12 @@ function NavApp() {
               Draft
             </Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/signin">
+                Sign In
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/signup">
+                Sign Up
+              </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/">
                 Action
               </NavDropdown.Item>
@@ -44,6 +50,11 @@ function NavApp() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        <Nav>
+        <Nav.Link classname="text-right text-white" as={Link} to="/signin" >
+          Sign In/Sign Up
+        </Nav.Link>
+        </Nav>
       </Container>
     </Navbar>
   );

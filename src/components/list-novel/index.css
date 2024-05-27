@@ -1,0 +1,74 @@
+.novel-list-section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.novel-item {
+  width: 180px;
+  height: 240px;
+  position: relative;
+  cursor: pointer;
+}
+
+.novel-item:hover {
+  opacity: 0.9;
+}
+
+.novel-name {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: hsla(0, 0%, 0%, 0.6);
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 6px;
+}
+
+.panigation-container {
+  width: 100%;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.panigation-container ul {
+  width: fit-content;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  overflow: auto;
+}
+
+.panigation-container li {
+  list-style: none;
+  border-radius: 6px;
+}
+
+.panigation-container li a {
+  display: block;
+  text-decoration: none;
+  color: #2b3035 !important;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panigation-container li.previous a,
+.panigation-container li.next a {
+  font-size: 24px;
+}
+
+.panigation-container li.selected {
+  background-color: #2b3035;
+}
+
+.panigation-container li.selected a {
+  color: white !important;
+}

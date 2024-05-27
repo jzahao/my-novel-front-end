@@ -7,6 +7,7 @@ import DetailPage from "../../pages/detail-page";
 import ReadingPage from "../../pages/reading-page";
 import SearchByGenrePage from "../../pages/search-result-pages/search-by-genre";
 import SearchByYearPage from "../../pages/search-result-pages/search-by-year";
+import SearchByKeywordPage from "../../pages/search-result-pages/search-by-keyword";
 
 // import ProtectedRoute from "./protectedroute";
 
@@ -22,8 +23,9 @@ function AppRouter() {
         path="novel/:name/chapter/:chapter"
         element={<ReadingPage />}
       />
-      <Route exact path="search/genre/:genre" element={<SearchByGenrePage />} />
-      <Route exact path="search/year/:year" element={<SearchByYearPage />} />
+      <Route exact path="search-genre/:genre" element={<SearchByGenrePage />} />
+      <Route exact path="search-year/:year" element={<SearchByYearPage />} />
+      <Route exact path="search/:keyword" element={<SearchByKeywordPage />} />
     </Routes>
   );
 }

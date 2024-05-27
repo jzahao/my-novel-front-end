@@ -10,7 +10,7 @@ body {
   font-family: "Roboto Condensed", sans-serif;
 }
 
-.common-container {
+.app-content {
   max-width: 1300px;
   margin: 0 auto;
   padding: 20px;

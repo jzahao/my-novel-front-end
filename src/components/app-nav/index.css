@@ -10,11 +10,6 @@
   padding-right: 40px !important;
 }
 
-.navbar .search-form {
-  display: flex;
-  align-items: center;
-}
-
 .dropdown-menu.show {
   display: flex !important;
   flex-wrap: wrap;

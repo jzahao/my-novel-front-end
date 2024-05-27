@@ -31,7 +31,7 @@ function NavApp() {
                 <NavDropdown.Item
                   key={item}
                   as={Link}
-                  to={`/search/genre/${item}`}
+                  to={`/search-genre/${item}`}
                 >
                   {item}
                 </NavDropdown.Item>
@@ -45,18 +45,19 @@ function NavApp() {
                 <NavDropdown.Item
                   key={item}
                   as={Link}
-                  to={`/search/year/${item}`}
+                  to={`/search-year/${item}`}
                 >
                   {item}
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
-            <Nav.Link classname="text-right text-white" as={Link} to="/signin" >
-          Sign In/Sign Up
-        </Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link className="text-right text-white" as={Link} to="/signin">
+              Sign In/Sign Up
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        
       </Container>
     </Navbar>
   );

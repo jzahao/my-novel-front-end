@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 
 import "./index.css";
@@ -6,10 +7,13 @@ import "./index.css";
 function SearchBox() {
   const [content, setContent] = useState("");
 
-  const handleOnClickSearchBtn = () => {
-    console.log(content);
-  };
+  const navigate = useNavigate();
 
+  const handleOnClickSearchBtn = () => {
+    if (!content) return;
+    navigate(`search/${content}`);
+    setContent("");
+  };
   return (
     <div className="search-box-container">
       <div className="search-box-content">

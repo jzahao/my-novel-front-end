@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-
 import SearchResultPage from "..";
 
-function SearchByYearPage() {
-  const { year } = useParams();
+function SearchByKeywordPage() {
+  const { keyword } = useParams();
 
   useEffect(() => {
     // call api
@@ -14,7 +13,7 @@ function SearchByYearPage() {
     <div className="search-by-genre-container">
       <div className="search-by-genre-content">
         <p style={{ textAlign: "center", marginBottom: "20px" }}>
-          Kết quả tìm kiếm cho năm xuất bản <b>{year}</b>
+          Kết quả tìm kiếm cho <b>"{keyword}"</b>
         </p>
         <SearchResultPage />
       </div>
@@ -22,4 +21,4 @@ function SearchByYearPage() {
   );
 }
 
-export default SearchByYearPage;
+export default SearchByKeywordPage;

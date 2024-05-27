@@ -5,7 +5,7 @@ import "./index.css";
 
 function HomePage() {
   return (
-    <div className="home-page-container common-container">
+    <div className="home-page-container">
       <div className="home-page-content">
         <div className="section-one">
           <ListNovel novelList={novelList} itemsPerPage={12} />

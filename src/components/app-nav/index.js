@@ -51,8 +51,12 @@ function NavApp() {
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
+            <Nav.Link classname="text-right text-white" as={Link} to="/signin" >
+          Sign In/Sign Up
+        </Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        
       </Container>
     </Navbar>
   );

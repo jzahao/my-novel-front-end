@@ -4,6 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
+import { novelGenre, publishingYear } from "../../draft";
+
 import "./index.css";
 
 function NavApp() {
@@ -22,39 +24,39 @@ function NavApp() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">
-              Home
+              Trang chủ
             </Nav.Link>
-            <Nav.Link as={Link} to="/draft">
-              Draft
-            </Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/signin">
-                Sign In
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/signup">
-                Sign Up
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/">
-                Action
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/draft">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/">
-                Something
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="/draft">
-                Separated link
-              </NavDropdown.Item>
+            <NavDropdown title="Thể loại" className="novel-genre-dropdown">
+              {novelGenre.map((item) => (
+                <NavDropdown.Item
+                  key={item}
+                  as={Link}
+                  to={`/search/genre/${item}`}
+                >
+                  {item}
+                </NavDropdown.Item>
+              ))}
             </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-        <Nav>
-        <Nav.Link classname="text-right text-white" as={Link} to="/signin" >
+            <NavDropdown
+              title="Năm xuất bản"
+              className="publishing-year-dropdown"
+            >
+              {publishingYear.map((item) => (
+                <NavDropdown.Item
+                  key={item}
+                  as={Link}
+                  to={`/search/year/${item}`}
+                >
+                  {item}
+                </NavDropdown.Item>
+              ))}
+            </NavDropdown>
+            <Nav.Link classname="text-right text-white" as={Link} to="/signin" >
           Sign In/Sign Up
         </Nav.Link>
-        </Nav>
+          </Nav>
+        </Navbar.Collapse>
+        
       </Container>
     </Navbar>
   );

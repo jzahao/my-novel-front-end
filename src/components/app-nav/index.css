@@ -14,3 +14,24 @@
   display: flex;
   align-items: center;
 }
+
+.dropdown-menu.show {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+
+.novel-genre-dropdown .dropdown-menu.show {
+  width: calc(160px * 3 + 4px) !important;
+}
+
+.novel-genre-dropdown .dropdown-menu .dropdown-item {
+  width: 160px !important;
+}
+
+.publishing-year-dropdown .dropdown-menu.show {
+  width: calc(64px * 4 + 4px) !important;
+}
+
+.publishing-year-dropdown .dropdown-menu .dropdown-item {
+  width: 64px !important;
+}

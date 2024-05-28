@@ -1,0 +1,9 @@
+.header-novel-detail .Title{
+    display: inline-block;
+}
+.gray-background{
+    background-color: #f2f2f2;
+}
+.overflow-y-auto {
+    overflow-y: auto; /* Hiển thị thanh cuộn dọc khi nội dung tràn ra */
+  }

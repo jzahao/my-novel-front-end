@@ -1,14 +1,23 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
-import { novelGenre, publishingYear } from "../../draft";
+import { getGenres } from "../../services";
 
 import "./index.css";
 
 function NavApp() {
+  const [genres, setGenres] = useState([]);
+
+  useEffect(() => {
+    getGenres().then((res) => {
+      if (res && res.errCode === 0) setGenres(res.data ? res.data : []);
+    });
+  }, []);
+
   return (
     <Navbar
       expand="md"
@@ -27,29 +36,16 @@ function NavApp() {
               Trang chủ
             </Nav.Link>
             <NavDropdown title="Thể loại" className="novel-genre-dropdown">
-              {novelGenre.map((item) => (
-                <NavDropdown.Item
-                  key={item}
-                  as={Link}
-                  to={`/search-genre/${item}`}
-                >
-                  {item}
-                </NavDropdown.Item>
-              ))}
-            </NavDropdown>
-            <NavDropdown
-              title="Năm xuất bản"
-              className="publishing-year-dropdown"
-            >
-              {publishingYear.map((item) => (
-                <NavDropdown.Item
-                  key={item}
-                  as={Link}
-                  to={`/search-year/${item}`}
-                >
-                  {item}
-                </NavDropdown.Item>
-              ))}
+              {genres.length > 0 &&
+                genres.map((item, index) => (
+                  <NavDropdown.Item
+                    key={index}
+                    as={Link}
+                    to={`/search-genre/${item.genre}`}
+                  >
+                    {item.genre}
+                  </NavDropdown.Item>
+                ))}
             </NavDropdown>
           </Nav>
           <Nav>

@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { IoCaretBack, IoCaretForward, IoStar } from "react-icons/io5";
-// import jsPDF from "jspdf";
-// import html2canvas from "html2canvas";
-// import * as htmlToImage from "html-to-image";
 import { useReactToPrint } from "react-to-print";
 
 import ReadingFrame from "../../components/reading-frame";
@@ -74,20 +71,6 @@ function ReadingPage() {
   };
 
   const pdfRef = useRef();
-
-  // const printDocument = () => {
-  //   const input = pdfRef.current;
-  //   htmlToImage.toPng(input, { quality: 0.95 }).then(function (dataUrl) {
-  //     var link = document.createElement("a");
-  //     link.download = "my-image-name.jpeg";
-  //     const pdf = new jsPDF();
-  //     const imgProps = pdf.getImageProperties(dataUrl);
-  //     const pdfWidth = pdf.internal.pageSize.getWidth();
-  //     const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-  //     pdf.addImage(dataUrl, "PNG", 0, 0, pdfWidth, pdfHeight);
-  //     pdf.save("download.pdf");
-  //   });
-  // };
 
   const printDocument = useReactToPrint({
     content: () => pdfRef.current,

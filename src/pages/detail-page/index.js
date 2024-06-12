@@ -6,13 +6,14 @@ import {
   IoHeart,
 } from "react-icons/io5";
 import ReactPaginate from "react-paginate";
-import { useSelector } from "react-redux";
-import { useParams, Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 import * as chapterServices from "../../services/chapter.services.js";
 import * as novelServices from "../../services/novel.services.js";
+import * as userServices from "../../services/user.service.js";
 import { serverSelector } from "../../store/server.slice.js";
-import { favoriteListSelector } from "../../store/user.slice.js";
+import userSlice, { userSelector } from "../../store/user.slice.js";
 
 import "./index.css";
 
@@ -25,8 +26,6 @@ function DetailPage() {
   const [chapters, setChapters] = useState([]);
   const [novelSummary, setNovelSummary] = useState([]);
 
-  const favoriteList = useSelector(favoriteListSelector);
-
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 30;
 
@@ -38,6 +37,12 @@ function DetailPage() {
     const newOffset = (event.selected * itemsPerPage) % chapters.length;
     setItemOffset(newOffset);
   };
+
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
+  const user = useSelector(userSelector);
 
   const server = useSelector(serverSelector);
 
@@ -63,6 +68,24 @@ function DetailPage() {
     }
   }, [novel]);
 
+  const handleOnClickLike = () => {
+    if (!user.isLogin) navigate("/signin");
+    else {
+      if (user.favoriteList.includes(Number(novelId)))
+        userServices
+          .deleteFavoriteNovelSV(server, user.id, novelId)
+          .then((res) => {
+            if (res && !res.error)
+              dispatch(userSlice.actions.deleteFavoriteNovel(Number(novelId)));
+          });
+      else
+        userServices.addFavoriteNovel(server, user.id, novelId).then((res) => {
+          if (res && !res.error)
+            dispatch(userSlice.actions.addFavoriteNovel(Number(novelId)));
+        });
+    }
+  };
+
   return (
     <div className="detail-page-container">
       <div className="detail-page-content">
@@ -80,8 +103,8 @@ function DetailPage() {
               />
             </div>
             <div className="novel-action">
-              <button onClick={() => {}}>
-                {favoriteList.includes(Number(novelId)) ? (
+              <button onClick={handleOnClickLike}>
+                {user.favoriteList.includes(Number(novelId)) ? (
                   <IoHeart />
                 ) : (
                   <IoHeartOutline />

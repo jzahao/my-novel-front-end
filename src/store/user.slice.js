@@ -21,9 +21,15 @@ export default createSlice({
       state.username = "";
       state.favoriteList = [];
     },
+    addFavoriteNovel: (state, action) => {
+      state.favoriteList.push(action.payload);
+    },
+    deleteFavoriteNovel: (state, action) => {
+      state.favoriteList = state.favoriteList.filter(
+        (item) => item !== action.payload
+      );
+    },
   },
 });
 
 export const userSelector = (state) => state.user;
-
-export const favoriteListSelector = (state) => state.user.favoriteList;

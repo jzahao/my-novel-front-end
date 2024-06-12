@@ -1,3 +1,7 @@
+.search-by-genre-container {
+  padding-top: 20px;
+}
+
 .search-by-genre-content {
   display: flex;
   flex-direction: row;

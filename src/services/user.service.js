@@ -21,3 +21,30 @@ export const deleteFavoriteNovelSV = async (server, user_id, novel_id) => {
     data: { user_id, novel_id },
   });
 };
+
+export const getReadingHistory = async (server, user_id, novel_id) => {
+  return axios(server).get(
+    `/api/get-reading-history?user_id=${user_id}&novel_id=${novel_id}`
+  );
+};
+
+export const addReadingHistory = async (server, user_id, novel_id, chapter) => {
+  return axios(server).post("/api/add-reading-history", {
+    user_id,
+    novel_id,
+    chapter,
+  });
+};
+
+export const updateReadingHistory = async (
+  server,
+  user_id,
+  novel_id,
+  chapter
+) => {
+  return axios(server).put("/api/update-reading-history", {
+    user_id,
+    novel_id,
+    chapter,
+  });
+};

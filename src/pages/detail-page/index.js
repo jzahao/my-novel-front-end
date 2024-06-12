@@ -26,6 +26,8 @@ function DetailPage() {
   const [chapters, setChapters] = useState([]);
   const [novelSummary, setNovelSummary] = useState([]);
 
+  const [history, setHistory] = useState("");
+
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 30;
 
@@ -62,6 +64,12 @@ function DetailPage() {
   }, [novelId, server]);
 
   useEffect(() => {
+    userServices.getReadingHistory(server, user.id, novelId).then((res) => {
+      if (res && !res.error) setHistory(res.data ? res.data.chapter : "");
+    });
+  }, [user.id, novelId, server]);
+
+  useEffect(() => {
     if (novel) {
       const splitArray = novel.summary.split("\n");
       setNovelSummary(splitArray);
@@ -88,6 +96,14 @@ function DetailPage() {
 
   return (
     <div className="detail-page-container">
+      {user.isLogin && history && (
+        <div className="history-notification">
+          Bạn đã đọc tới chương {history},{" "}
+          <Link to={`/novel/${novelId}/chapter/${history}`}>
+            <i>đọc tiếp...</i>
+          </Link>
+        </div>
+      )}
       <div className="detail-page-content">
         <div className="detail-page-header">
           <span>THÔNG TIN TRUYỆN</span>
@@ -103,7 +119,14 @@ function DetailPage() {
               />
             </div>
             <div className="novel-action">
-              <button onClick={handleOnClickLike}>
+              <button
+                onClick={handleOnClickLike}
+                title={
+                  user.favoriteList.includes(Number(novelId))
+                    ? "Xóa khỏi yêu thích"
+                    : "Thêm vào yêu thích"
+                }
+              >
                 {user.favoriteList.includes(Number(novelId)) ? (
                   <IoHeart />
                 ) : (
@@ -127,16 +150,26 @@ function DetailPage() {
             <hr />
             <div className="novel-info">
               <p className="info-line">
-                <strong>Tác giả:</strong> {novel.author}
+                <strong>Tác giả:</strong>{" "}
+                <span
+                  className="span-link"
+                  onClick={() => navigate(`/search/${novel.author}`)}
+                >
+                  {novel.author}
+                </span>
               </p>
               <p className="info-line">
                 <strong>Thể loại: </strong>
                 {genres.length > 0 &&
                   genres.map((item, index) => (
                     <span key={index}>
-                      {index !== genres.length - 1
-                        ? item.genre + ", "
-                        : item.genre}
+                      <span
+                        className="span-link"
+                        onClick={() => navigate(`/genre/${item.genre}`)}
+                      >
+                        {item.genre}
+                      </span>
+                      <span>{index !== genres.length - 1 && ", "}</span>
                     </span>
                   ))}
               </p>

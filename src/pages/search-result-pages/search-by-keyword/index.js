@@ -6,6 +6,8 @@ import SearchResultPage from "..";
 import * as novelServices from "../../../services/novel.services.js";
 import { serverSelector } from "../../../store/server.slice.js";
 
+import "./index.css";
+
 function SearchByKeywordPage() {
   const { keyword } = useParams();
 

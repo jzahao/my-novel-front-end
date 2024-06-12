@@ -1,6 +1,22 @@
 .detail-page-container {
   color: #2b3035;
-  padding: 20px 40px;
+  padding: 40px;
+}
+
+.detail-page-container .history-notification {
+  padding: 20px;
+  background-color: #2b3035;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.detail-page-container .history-notification a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.detail-page-container .history-notification a:hover {
+  text-decoration: underline;
 }
 
 .detail-page-header,
@@ -114,6 +130,14 @@
 }
 
 .detail-page-content .chapter-item:hover {
+  text-decoration: underline;
+}
+
+.detail-page-content .span-link {
+  cursor: pointer;
+}
+
+.detail-page-content .span-link:hover {
   text-decoration: underline;
 }
 

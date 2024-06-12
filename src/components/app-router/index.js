@@ -18,14 +18,14 @@ function AppRouter() {
   return (
     <Routes>
       <Route exact path="/" element={<HomePage />} />
-      <Route exact path="novel/:novelId" element={<DetailPage />} />
+      <Route exact path="/novel/:novelId" element={<DetailPage />} />
       <Route
         exact
-        path="novel/:id/chapter/:chapter"
+        path="/novel/:id/chapter/:chapter"
         element={<ReadingPage />}
       />
-      <Route exact path="genre/:genre" element={<SearchByGenrePage />} />
-      <Route exact path="search/:keyword" element={<SearchByKeywordPage />} />
+      <Route exact path="/genre/:genre" element={<SearchByGenrePage />} />
+      <Route exact path="/search/:keyword" element={<SearchByKeywordPage />} />
 
       <Route element={<ProtectedRoute isAllowed={!user?.isLogin} />}>
         <Route exact path="/signin" element={<SignIn />} />

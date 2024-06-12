@@ -1,0 +1,27 @@
+.home-page-content .section-one,
+.home-page-content .section-two {
+  padding: 20px 0;
+}
+
+.home-page-content .section-one {
+  margin-bottom: 20px;
+}
+
+.home-page-content .section-two {
+  margin-top: 32px;
+}
+
+.home-page-content header {
+  margin-bottom: 16px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #2b3035;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .home-page-content header {
+    font-size: 32px;
+  }
+}

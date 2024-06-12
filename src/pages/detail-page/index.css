@@ -1,9 +1,138 @@
-.header-novel-detail .Title{
-    display: inline-block;
+.detail-page-container {
+  color: #2b3035;
+  padding: 20px 40px;
 }
-.gray-background{
-    background-color: #f2f2f2;
+
+.detail-page-header,
+.chapter-content-header {
+  display: flex;
+  width: 100%;
 }
-.overflow-y-auto {
-    overflow-y: auto; /* Hiển thị thanh cuộn dọc khi nội dung tràn ra */
+
+.detail-page-header span,
+.chapter-content-header span {
+  display: block;
+}
+
+.detail-page-header span:first-child,
+.chapter-content-header span:first-child {
+  width: fit-content;
+  text-wrap: nowrap;
+  font-size: 28px;
+  font-weight: 700;
+  border-bottom: 2px solid #2b3035;
+}
+
+.detail-page-header span:last-child,
+.chapter-content-header span:last-child {
+  width: 100%;
+  border-bottom: 2px solid rgba(43, 48, 53, 0.2);
+}
+
+.detail-page-content .info-content {
+  padding: 32px 0;
+  display: flex;
+  /* align-items: center; */
+}
+
+.detail-page-content .info-content .left-content {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.detail-page-content .info-content .novel-image img {
+  width: 225px;
+  height: auto;
+  font-size: 14px;
+}
+
+.detail-page-content .info-content .novel-image img {
+  box-shadow: 1px 1px 8px #2b3035;
+}
+
+.detail-page-content .info-content .novel-info {
+  width: 100%;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.detail-page-content .info-content .novel-info .info-line {
+  margin-bottom: 3px;
+}
+
+.detail-page-content .info-content .right-content {
+  padding-left: 48px;
+  height: fit-content;
+  width: 100%;
+}
+
+.detail-page-content .info-content .novel-name {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.detail-page-content .info-content .right-content hr {
+  margin: 24px 0 16px;
+}
+
+.detail-page-content .info-content .novel-action {
+  text-align: center;
+}
+
+.detail-page-content .info-content .novel-action button {
+  font-size: 40px;
+  color: #2b3035;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.detail-page-content .chapter-content {
+  padding: 20px 0;
+}
+
+.detail-page-content .chapter-items {
+  /* max-height: 300px; */
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+  padding: 16px 0;
+}
+
+.detail-page-content .chapter-item {
+  text-decoration: none;
+  color: #2b3035;
+  width: 49%;
+}
+
+.detail-page-content .chapter-item:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 800px) {
+  .detail-page-content .info-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
   }
+
+  .detail-page-content .info-content .right-content {
+    padding: 0 20px;
+  }
+
+  .detail-page-content .chapter-items {
+    height: fit-content;
+  }
+
+  .detail-page-content .chapter-item {
+    width: 100%;
+  }
+}

@@ -1,3 +1,9 @@
+.navbar {
+  position: sticky !important;
+  top: 0;
+  z-index: 10;
+}
+
 .navbar .navbar-brand {
   margin-right: 60px !important;
   /* padding-top: 0 !important; */
@@ -8,6 +14,7 @@
 
 .navbar .nav-link {
   padding-right: 40px !important;
+  text-wrap: nowrap;
 }
 
 .dropdown-menu.show {
@@ -29,4 +36,36 @@
 
 .publishing-year-dropdown .dropdown-menu .dropdown-item {
   width: 64px !important;
+}
+
+.navbar-nav .form-select {
+  height: 40px;
+  margin-right: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 40px;
+}
+
+.nav-right span,
+.nav-right button {
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-wrap: nowrap;
+}
+
+.nav-right span {
+  background-color: #fff;
+  color: #2b3035;
+  padding: 8px 16px;
+  padding-right: 20px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.nav-right button {
+  background-color: transparent;
+  padding: 8px;
+  padding-right: 40px;
 }

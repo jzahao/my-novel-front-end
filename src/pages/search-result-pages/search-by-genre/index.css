@@ -1,0 +1,54 @@
+.search-by-genre-content {
+  display: flex;
+  flex-direction: row;
+  gap: 1%;
+}
+
+.search-by-genre-content .left-content {
+  width: 70%;
+}
+
+.search-by-genre-content .right-content {
+  width: 29%;
+  height: fit-content;
+  margin-top: 6px;
+  padding: 20px 24px;
+  background-color: #fdfdfd;
+  background-color: #2b3035;
+  color: #fff;
+}
+
+.search-by-genre-content .right-content header {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding: 4px 0;
+  border-bottom: 1px solid #4e4e4e;
+}
+
+.search-by-genre-content .right-content .genres-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 28px;
+}
+
+.search-by-genre-content .right-content .genres-list a {
+  width: 50%;
+  padding: 3px 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+.search-by-genre-content .right-content .genres-list a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1000px) {
+  .search-by-genre-content .left-content {
+    width: 100%;
+  }
+
+  .search-by-genre-content .right-content {
+    display: none;
+  }
+}

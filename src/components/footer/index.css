@@ -1,12 +1,11 @@
 .footer-container {
   width: 100%;
-  background-color: #eee;
-  margin-top: 20px;
+  background-color: #2b3035;
   padding: 32px;
 }
 
 .footer-content {
   text-align: center;
   letter-spacing: 0.6px;
-  color: #2b3035;
+  color: #fff;
 }

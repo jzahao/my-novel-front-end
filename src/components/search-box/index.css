@@ -2,7 +2,10 @@
   padding: 12px 0;
   display: flex;
   justify-content: center;
-  background-color: #f4f4f4;
+  background-color: #fdfdfd;
+  /* position: sticky;
+  top: 64px;
+  z-index: 9; */
 }
 
 .search-box-content {
@@ -18,7 +21,7 @@
   font-size: 14px;
   color: #545454;
   line-height: normal;
-  border: 1px solid #f8f8f8;
+  border: 1px solid #e2e2e2;
   border-radius: 4px;
   outline: none;
 }

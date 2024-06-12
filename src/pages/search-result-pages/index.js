@@ -1,15 +1,15 @@
+import { memo } from "react";
+
 import ListNovel from "../../components/list-novel";
 
-import { novelList } from "../../draft";
-
-function SearchResultPage() {
+function SearchResultPage({ novelList }) {
   return (
     <div className="search-result-container">
       <div className="search-result-content">
-        <ListNovel novelList={novelList} itemsPerPage={12} />
+        <ListNovel novelList={novelList} itemsPerPage={6} flex="column" />
       </div>
     </div>
   );
 }
 
-export default SearchResultPage;
+export default memo(SearchResultPage);

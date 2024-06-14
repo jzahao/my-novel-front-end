@@ -1,6 +1,6 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 
-function ProtectedRoute({ isAllowed, redirectPath = "/" }) {
+function ProtectedRoute({ isAllowed, redirectPath }) {
   const location = useLocation();
 
   if (!isAllowed) {

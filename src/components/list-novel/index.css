@@ -174,4 +174,12 @@
   .novel-list-section.display-flex-column .novel-view .text-view {
     display: none;
   }
+
+  .novel-list-section.display-flex-column .novel-name span:first-child {
+    font-size: 16px;
+  }
+
+  .novel-list-section.display-flex-column .novel-name .novel-author {
+    font-size: 14px;
+  }
 }

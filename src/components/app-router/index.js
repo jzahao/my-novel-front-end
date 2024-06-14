@@ -8,6 +8,7 @@ import DetailPage from "../../pages/detail-page";
 import ReadingPage from "../../pages/reading-page";
 import SearchByGenrePage from "../../pages/search-result-pages/search-by-genre";
 import SearchByKeywordPage from "../../pages/search-result-pages/search-by-keyword";
+import MyFavorite from "../../pages/my-favorite-page";
 import { userSelector } from "../../store/user.slice";
 
 import ProtectedRoute from "./protectedroute";
@@ -27,9 +28,19 @@ function AppRouter() {
       <Route exact path="/genre/:genre" element={<SearchByGenrePage />} />
       <Route exact path="/search/:keyword" element={<SearchByKeywordPage />} />
 
-      <Route element={<ProtectedRoute isAllowed={!user?.isLogin} />}>
+      <Route
+        element={<ProtectedRoute isAllowed={!user.isLogin} redirectPath="/" />}
+      >
         <Route exact path="/signin" element={<SignIn />} />
         <Route exact path="/signup" element={<SignUn />} />
+      </Route>
+
+      <Route
+        element={
+          <ProtectedRoute isAllowed={user.isLogin} redirectPath="/signin" />
+        }
+      >
+        <Route exact path="/my-favorite" element={<MyFavorite />} />
       </Route>
     </Routes>
   );

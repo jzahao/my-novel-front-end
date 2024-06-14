@@ -66,6 +66,9 @@ function NavApp() {
                   </NavDropdown.Item>
                 ))}
             </NavDropdown>
+            <Nav.Link as={Link} to="/my-favorite">
+              Yêu thích
+            </Nav.Link>
           </Nav>
           <Nav className="nav-right">
             <Form.Select value={server} onChange={handleOnChangeServer}>

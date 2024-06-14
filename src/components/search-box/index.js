@@ -19,7 +19,7 @@ function SearchBox() {
       <div className="search-box-content">
         <input
           type="text"
-          placeholder="Tìm tiểu thuyết"
+          placeholder="Tìm tiểu thuyết, tác giả"
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
